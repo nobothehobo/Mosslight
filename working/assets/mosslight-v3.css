@@ -14,3 +14,7 @@ html.mosslight-immersive,html.mosslight-immersive body{width:100%;height:100%;he
 html.mosslight-immersive #world,html.mosslight-immersive #ui{position:fixed;inset:0;width:100vw;height:100dvh}
 @supports(height:100dvh){html:fullscreen body,html:fullscreen #world,html:fullscreen #ui{height:100dvh}}
 
+/* V3R5.1 title fullscreen affordance */
+.title-fullscreen{margin-top:-2px;font-size:13px!important;color:#d5dfc9!important;border:1px solid #bcd1ba22!important;text-align:center!important}
+.title-fullscreen:hover{border-color:#bcd1ba55!important}
+

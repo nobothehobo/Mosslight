@@ -51,3 +51,9 @@ No gameplay behavior has intentionally been changed in this baseline.
 - Fullscreen button icon and accessibility label update automatically when entering or leaving fullscreen.
 - Added a Safari cache-buster for the updated runtime and stylesheet.
 
+## V3R5.1 development — fullscreen visibility hotfix
+
+- Added a clearly labeled Full screen button directly on the title screen.
+- The existing in-game HUD and pause-menu fullscreen controls remain available.
+- Updated cache-busting so Safari loads the new control immediately.
+
