@@ -64,3 +64,10 @@ No gameplay behavior has intentionally been changed in this baseline.
 - Added iPad/iPhone standalone web-app metadata and a web manifest for a browser-chrome-free Home Screen launch where Safari does not permit page fullscreen.
 - Bumped Safari cache version again.
 
+## V3R5.3 development — fullscreen UI cleanup
+
+- Removed the duplicate icon-only fullscreen button from the in-game HUD.
+- Kept one clearly labeled Full screen control during gameplay.
+- Kept fullscreen access on the title screen and in the pause menu.
+- Bumped the Safari cache version so the duplicate disappears immediately.
+
