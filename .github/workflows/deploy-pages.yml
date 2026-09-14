@@ -1,4 +1,4 @@
-name: Deploy Mosslight playtest
+name: Deploy Mosslight stable + development preview
 
 on:
   push:
@@ -27,27 +27,38 @@ jobs:
     runs-on: ubuntu-latest
 
     steps:
-      - name: Checkout repository
+      - name: Checkout stable baseline
         uses: actions/checkout@v4
-
-      - name: Configure GitHub Pages
-        uses: actions/configure-pages@v5
         with:
-          enablement: true
+          ref: main
+          path: stable-src
 
-      - name: Verify browser-ready build
+      - name: Checkout development preview
+        uses: actions/checkout@v4
+        with:
+          ref: development
+          path: dev-src
+
+      - name: Assemble stable and preview site
         shell: bash
         run: |
           set -euo pipefail
-          test -f working/index.html
-          test -f working/assets/mosslight-v3-readable.js
-          test -f working/assets/mosslight-v3.css
-          echo "Mosslight static playtest verified."
+          mkdir -p site/dev
+          cp -a stable-src/working/. site/
+          cp -a dev-src/working/. site/dev/
+          test -f site/index.html
+          test -f site/assets/mosslight-v3-readable.js
+          test -f site/dev/index.html
+          test -f site/dev/assets/mosslight-v3-readable.js
+          echo "Stable root and development preview verified."
 
-      - name: Upload Mosslight playtest
+      - name: Configure GitHub Pages
+        uses: actions/configure-pages@v5
+
+      - name: Upload Mosslight site
         uses: actions/upload-pages-artifact@v3
         with:
-          path: working
+          path: site
 
       - name: Deploy to GitHub Pages
         id: deployment
