@@ -1,5 +1,6 @@
 [
   {
+    "id": "npc_mechanic_001",
     "warmth": 0.8,
     "energy": 0.5,
     "humor": 0.9,
@@ -9,9 +10,18 @@
       "You’re just in time. Sit beside me while I work, if you like. Company improves the diagnostics.",
       "There you are. I checked your landing lights before supper. They’ll be waiting whenever you come home."
     ],
-    "reply": "You understand machinery: a little attention, and knowing when to stop."
+    "reply": "You understand machinery: a little attention, and knowing when to stop.",
+    "ambient": [
+      "Morning, pilot!",
+      "Hey, pilot.",
+      "Good to see you."
+    ],
+    "returnGreeting": "Back in one piece? Good.",
+    "gesture": "wave",
+    "cooldownSeconds": 18.0
   },
   {
+    "id": "npc_store_001",
     "warmth": 1,
     "energy": 0.8,
     "humor": 0.6,
@@ -21,9 +31,18 @@
       "I stock three kinds of biscuits. Neri maintains there are only two good kinds.",
       "I’m glad you stopped in. If you’re short of something for the journey, we’ll work it out together."
     ],
-    "reply": "I’ll put the kettle on. No purchase required for a decent conversation."
+    "reply": "I’ll put the kettle on. No purchase required for a decent conversation.",
+    "ambient": [
+      "Morning!",
+      "Heya, friend!",
+      "There you are!"
+    ],
+    "returnGreeting": "Welcome back! Need anything?",
+    "gesture": "wave",
+    "cooldownSeconds": 20.5
   },
   {
+    "id": "npc_researcher_001",
     "warmth": 0.7,
     "energy": 1,
     "humor": 0.5,
@@ -33,9 +52,18 @@
       "I was meant to catalogue samples. Instead I discovered six new questions.",
       "The plants keep different hours from us. I’m trying to be a considerate visitor."
     ],
-    "reply": "Exactly! Curiosity is a useful instrument, provided we remember to listen."
+    "reply": "Exactly! Curiosity is a useful instrument, provided we remember to listen.",
+    "ambient": [
+      "Oh! Morning!",
+      "Oh, hi!",
+      "You’re back!"
+    ],
+    "returnGreeting": "You’re back! I have questions.",
+    "gesture": "grin",
+    "cooldownSeconds": 23.0
   },
   {
+    "id": "npc_cafe_001",
     "warmth": 1,
     "energy": 0.6,
     "humor": 0.7,
@@ -45,9 +73,18 @@
       "Sela calls this lunch. Oren calls it market research. They both order seconds.",
       "I kept a little pot warm in case you came by. Come sit; you don’t have to have a story tonight."
     ],
-    "reply": "Then stay a while. A place becomes home one ordinary evening at a time."
+    "reply": "Then stay a while. A place becomes home one ordinary evening at a time.",
+    "ambient": [
+      "Morning, you.",
+      "Hey, you. Kettle’s on.",
+      "Glad you’re here."
+    ],
+    "returnGreeting": "Welcome home. I kept the kettle warm.",
+    "gesture": "wave",
+    "cooldownSeconds": 25.5
   },
   {
+    "id": "npc_ranger_001",
     "warmth": 0.6,
     "energy": 0.7,
     "humor": 0.7,
@@ -57,6 +94,14 @@
       "Checked the trail signs. One was pointing at a bush. The bush denied everything.",
       "It’s good to see you safe. I’ll walk the first bend with you if the dark feels a little too quiet."
     ],
-    "reply": "That’s the spirit. Bring back a story, and leave the trail a little better."
+    "reply": "That’s the spirit. Bring back a story, and leave the trail a little better.",
+    "ambient": [
+      "Morning.",
+      "Hey there.",
+      "Good to see you."
+    ],
+    "returnGreeting": "Good to see you safe.",
+    "gesture": "nod",
+    "cooldownSeconds": 28.0
   }
 ]

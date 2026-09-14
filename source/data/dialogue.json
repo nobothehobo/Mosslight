@@ -121,7 +121,7 @@
   },
   "sela.done": {
     "speaker": "Sela Venn",
-    "text": "There. Quiet, for now. Ivo has been listening to the plants, if you can believe it. Show him what we found. Your workbench is ready when you get back aboard.",
+    "text": "There. Quiet again. Ivo wants to see what we found — apparently he’s been listening to plants now. Your workbench is ready when you get back aboard.",
     "responses": [
       {
         "text": "Thank you, Sela.",
@@ -149,7 +149,7 @@
   },
   "sela.flight": {
     "speaker": "Sela Venn",
-    "text": "The fittings will stabilize navigation. Take the pilot seat and chart a course to Orren when you’re ready. And come back. That’s what a harbor is for.",
+    "text": "The fittings will stabilize navigation. When you’re ready, take the pilot seat and chart a course to Orren. And, hey — come back, alright?",
     "responses": [
       {
         "text": "See you around.",
@@ -221,7 +221,7 @@
         "stage": 3
       }
     ],
-    "text": "Your echo module and the lanterncap pulses line up. The old array isn’t broadcasting at the forest. It’s listening. Whatever your ship heard, the forest heard first. We may be standing on an enormous conversation.",
+    "text": "Your echo module matches the lanterncap pulses exactly. And the array isn’t broadcasting — it’s listening. Whatever your ship picked up, the forest heard it first. That is… a lot to think about.",
     "responses": [
       {
         "text": "I think I’ll stay and listen.",
@@ -458,7 +458,7 @@
   },
   "neri.home": {
     "speaker": "Neri Bloom",
-    "text": "Home is where someone notices you’ve been gone. Take the long way back from the woods. Look over the pond. Then come tell us what you found. That’s how it starts.",
+    "text": "Honestly? It’s mostly people noticing when you’ve been gone. Take the long way back from the woods sometime, then come tell me what you found.",
     "responses": [
       {
         "text": "I’ll come back.",
