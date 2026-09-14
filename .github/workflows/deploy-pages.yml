@@ -1,0 +1,52 @@
+name: Deploy Mosslight playtest
+
+on:
+  push:
+    branches:
+      - main
+      - development
+    paths:
+      - "working/**"
+      - ".github/workflows/deploy-pages.yml"
+  workflow_dispatch:
+
+permissions:
+  contents: read
+  pages: write
+  id-token: write
+
+concurrency:
+  group: "mosslight-pages"
+  cancel-in-progress: true
+
+jobs:
+  deploy:
+    environment:
+      name: github-pages
+      url: ${{ steps.deployment.outputs.page_url }}
+    runs-on: ubuntu-latest
+
+    steps:
+      - name: Checkout repository
+        uses: actions/checkout@v4
+
+      - name: Configure GitHub Pages
+        uses: actions/configure-pages@v5
+
+      - name: Verify browser-ready build
+        shell: bash
+        run: |
+          set -euo pipefail
+          test -f working/index.html
+          test -f working/assets/mosslight-v3-readable.js
+          test -f working/assets/mosslight-v3.css
+          echo "Mosslight static playtest verified."
+
+      - name: Upload Mosslight playtest
+        uses: actions/upload-pages-artifact@v3
+        with:
+          path: working
+
+      - name: Deploy to GitHub Pages
+        id: deployment
+        uses: actions/deploy-pages@v4
