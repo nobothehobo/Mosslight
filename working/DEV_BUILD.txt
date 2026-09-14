@@ -1,1 +1,1 @@
-Mosslight V3R5.2 development preview — obvious fullscreen + iPad standalone support
+Mosslight V3R5.3 development preview — fullscreen duplicate cleanup
