@@ -1,1 +1,1 @@
-Mosslight V3R5 development preview — fullscreen toggle
+Mosslight V3R5.1 development preview — fullscreen visibility hotfix
