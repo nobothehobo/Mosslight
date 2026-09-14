@@ -22,3 +22,14 @@ No gameplay behavior has intentionally been changed in this baseline.
 - Added named social-profile data for future clean TypeScript reconstruction.
 - No changes to save schema, quests, inventory, economy, world layout, navigation, or flight.
 
+## V3R3 development — visual + music foundation
+
+- Reworked the procedural music system from long static sustained chords into gentle changing phrases, broken chords, rests, and zone-specific progressions.
+- Preserved the existing low-passed ambient noise bed that gives Mosslight its soft environmental hush.
+- Added different musical palettes for Mosslight daytime/night, café, provisions shop, ship, Orren, and cave.
+- Replaced pointed tree foliage with layered rounded canopies for a softer handcrafted silhouette.
+- Added shrubs, small flowering clusters, and low ground cover around the harbor region.
+- Added porch steps, window boxes, and planted façade details to settlement buildings without changing collision boundaries.
+- Improved terrain material response, sky horizon depth, sunset halo, and overall exposure.
+- Kept gameplay, saves, quests, economy, navigation, flight, and interaction coordinates unchanged.
+

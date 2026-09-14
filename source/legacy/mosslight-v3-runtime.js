@@ -9349,7 +9349,7 @@ class N0 {
     daylight = 1;
     lastLight = -1;
     sunDir = new T;
-    constructor(t) { this.renderer = new t0({ canvas: t, antialias: !0, powerPreference: "high-performance", alpha: !1 }), this.renderer.outputColorSpace = De, this.renderer.toneMapping = jl, this.renderer.toneMappingExposure = 1.08, this.renderer.shadowMap.type = Yl, this.scene.add(this.sun, this.sun.target, this.hemi, this.ambient), this.sun.castShadow = !0, this.sun.shadow.camera.left = -42, this.sun.shadow.camera.right = 42, this.sun.shadow.camera.top = 42, this.sun.shadow.camera.bottom = -42, this.sun.shadow.camera.near = 1, this.sun.shadow.camera.far = 190, this.sun.shadow.bias = -4e-4, this.sun.shadow.normalBias = .07, this.scene.fog = new ao("#b7d4cb", 100, 360); const e = new en({ side: Re, depthWrite: !1, uniforms: { top: { value: new Pt("#6dadaf") }, bottom: { value: new Pt("#dce4c0") }, sun: { value: new T(1, 1, 0) }, warm: { value: 0 } }, vertexShader: "varying vec3 vDir;void main(){vDir=position;gl_Position=projectionMatrix*modelViewMatrix*vec4(position,1.);}", fragmentShader: "varying vec3 vDir;uniform vec3 top;uniform vec3 bottom;uniform vec3 sun;uniform float warm;void main(){vec3 d=normalize(vDir);float h=pow(max(0.,d.y),.5);vec3 col=mix(bottom,top,h);float spot=pow(max(0.,dot(d,normalize(sun))),90.);col+=spot*vec3(.6,.42,.21)*warm;gl_FragColor=vec4(col,1.);}" }); this.sky = new qt(new On(800, 24, 12), e), this.scene.add(this.sky); const n = Nn(381), i = new Float32Array(650 * 3); for (let c = 0; c < 650; c++) {
+    constructor(t) { this.renderer = new t0({ canvas: t, antialias: !0, powerPreference: "high-performance", alpha: !1 }), this.renderer.outputColorSpace = De, this.renderer.toneMapping = jl, this.renderer.toneMappingExposure = 1.12, this.renderer.shadowMap.type = Yl, this.scene.add(this.sun, this.sun.target, this.hemi, this.ambient), this.sun.castShadow = !0, this.sun.shadow.camera.left = -42, this.sun.shadow.camera.right = 42, this.sun.shadow.camera.top = 42, this.sun.shadow.camera.bottom = -42, this.sun.shadow.camera.near = 1, this.sun.shadow.camera.far = 190, this.sun.shadow.bias = -4e-4, this.sun.shadow.normalBias = .07, this.scene.fog = new ao("#b7d4cb", 100, 360); const e = new en({ side: Re, depthWrite: !1, uniforms: { top: { value: new Pt("#6dadaf") }, bottom: { value: new Pt("#dce4c0") }, sun: { value: new T(1, 1, 0) }, warm: { value: 0 } }, vertexShader: "varying vec3 vDir;void main(){vDir=position;gl_Position=projectionMatrix*modelViewMatrix*vec4(position,1.);}", fragmentShader: "varying vec3 vDir;uniform vec3 top;uniform vec3 bottom;uniform vec3 sun;uniform float warm;void main(){vec3 d=normalize(vDir);float h=pow(max(0.,d.y),.62);vec3 col=mix(bottom,top,h);float horizon=pow(1.-abs(clamp(d.y,-1.,1.)),5.);col+=horizon*vec3(.10,.12,.08)*(0.35+warm*.65);float spot=pow(max(0.,dot(d,normalize(sun))),110.);float halo=pow(max(0.,dot(d,normalize(sun))),18.);col+=spot*vec3(.72,.48,.24)*warm+halo*vec3(.09,.07,.04)*warm;gl_FragColor=vec4(col,1.);}" }); this.sky = new qt(new On(800, 24, 12), e), this.scene.add(this.sky); const n = Nn(381), i = new Float32Array(650 * 3); for (let c = 0; c < 650; c++) {
         const l = n() * Math.PI * 2, h = n() * .94 + .05, u = Math.sqrt(1 - h * h);
         i.set([Math.cos(l) * u * 740, h * 740, Math.sin(l) * u * 740], c * 3);
     } const r = new _e; r.setAttribute("position", new Se(i, 3)), this.stars = new lo(r, new rr({ color: "#d6e8e4", size: 1.1, transparent: !0, opacity: 0, depthWrite: !1, fog: !1 })), this.scene.add(this.stars); const a = new qt(new On(39, 32, 20), new bn({ color: "#c6d6be", fog: !1 })); this.planet.add(a); const o = new qt(new cr(49, 62, 64), new bn({ color: "#d8d0af", side: Ge, transparent: !0, opacity: .48, fog: !1 })); o.rotation.x = 1.3, o.rotation.z = .35, this.planet.add(o), this.planet.position.set(165, 170, -480), this.scene.add(this.planet); for (const [c, l] of [[-9, 1], [11, 21], [21, -30]]) {
@@ -9449,7 +9449,7 @@ class z0 {
         e.setY(c, u);
         const d = qs(l, h), f = l < -30 && h < -35;
         r.set(d < 2.5 ? "#b9b08a" : u > 12 ? "#7f9984" : f ? "#688e70" : "#9baf78"), Si(l, h) && r.set("#668e80"), r.multiplyScalar(.94 + i() * .12), n.set([r.r, r.g, r.b], c * 3);
-    } t.setAttribute("color", new Se(n, 3)), t.computeVertexNormals(); const a = new qt(t, new ye({ vertexColors: !0, roughness: .96, map: v0() })); a.receiveShadow = !0, this.outside.add(a); const o = new en({ transparent: !0, depthWrite: !1, side: Ge, uniforms: { time: { value: 0 }, light: { value: 1 } }, vertexShader: "varying vec2 vUv; varying vec3 vWorld; uniform float time; void main(){vUv=uv;vec3 p=position;p.z+=sin(p.x*.6+time*.9)*.045+cos(p.y*.5+time)*.035;vec4 w=modelMatrix*vec4(p,1.);vWorld=w.xyz;gl_Position=projectionMatrix*viewMatrix*w;}", fragmentShader: "varying vec2 vUv;varying vec3 vWorld;uniform float time;uniform float light;void main(){float w=sin(vWorld.x*1.1+vWorld.z*.65+time*.6)*sin(vWorld.z*1.45-time*.9);float r=smoothstep(.76,.96,w);float edge=smoothstep(.38,.5,length(vUv-.5));vec3 col=mix(vec3(.20,.46,.49),vec3(.55,.76,.69),.35+.15*sin(vWorld.z*.18+time*.35));col+=r*.19+edge*.13;gl_FragColor=vec4(col*(.3+.7*light),.78);}" }); this.water = new qt(new ar(1, 72), o), this.water.rotation.x = -Math.PI / 2, this.water.position.set(76, -2, -12), this.water.scale.set(35, 25, 1), this.outside.add(this.water); }
+    } t.setAttribute("color", new Se(n, 3)), t.computeVertexNormals(); const a = new qt(t, new ye({ vertexColors: !0, roughness: .88, map: v0() })); a.receiveShadow = !0, this.outside.add(a); const o = new en({ transparent: !0, depthWrite: !1, side: Ge, uniforms: { time: { value: 0 }, light: { value: 1 } }, vertexShader: "varying vec2 vUv; varying vec3 vWorld; uniform float time; void main(){vUv=uv;vec3 p=position;p.z+=sin(p.x*.6+time*.9)*.045+cos(p.y*.5+time)*.035;vec4 w=modelMatrix*vec4(p,1.);vWorld=w.xyz;gl_Position=projectionMatrix*viewMatrix*w;}", fragmentShader: "varying vec2 vUv;varying vec3 vWorld;uniform float time;uniform float light;void main(){float w=sin(vWorld.x*1.1+vWorld.z*.65+time*.6)*sin(vWorld.z*1.45-time*.9);float r=smoothstep(.76,.96,w);float edge=smoothstep(.38,.5,length(vUv-.5));vec3 col=mix(vec3(.20,.46,.49),vec3(.55,.76,.69),.35+.15*sin(vWorld.z*.18+time*.35));col+=r*.19+edge*.13;gl_FragColor=vec4(col*(.3+.7*light),.78);}" }); this.water = new qt(new ar(1, 72), o), this.water.rotation.x = -Math.PI / 2, this.water.position.set(76, -2, -12), this.water.scale.set(35, 25, 1), this.outside.add(this.water); }
     makeNature() {
         const t = Nn(8841), e = new Me, n = [], i = [], r = new Wt;
         for (let h = 0; h < 730; h++) {
@@ -9462,7 +9462,7 @@ class z0 {
                 n.push({ x: u + (m - 1) * f * 1.1, y: v + g - m * f * .8, z: d + (m === 1 ? -.5 : .5) * f, s: f * (m === 1 ? 3.05 : 2.3), h: f * (m === 1 ? 3 : 2.4) });
         }
         const a = new Fr(new fs(.36, .58, 1, 7), new ye({ color: "#675d4b", roughness: 1 }), i.length);
-        i.forEach((h, u) => { e.position.set(h.x, h.y + h.h / 2, h.z), e.scale.set(h.s, h.h, h.s), e.rotation.set(0, h.x, 0), e.updateMatrix(), a.setMatrixAt(u, e.matrix); }), a.castShadow = !0, a.receiveShadow = !0, this.outside.add(a), this.trees = new Fr(new lr(1, 2), new ye({ roughness: .85 }), n.length);
+        i.forEach((h, u) => { e.position.set(h.x, h.y + h.h / 2, h.z), e.scale.set(h.s, h.h, h.s), e.rotation.set(0, h.x, 0), e.updateMatrix(), a.setMatrixAt(u, e.matrix); }), a.castShadow = !0, a.receiveShadow = !0, this.outside.add(a), this.trees = new Fr(new On(1, 10, 7), new ye({ roughness: .78 }), n.length);
         const o = new Pt;
         n.forEach((h, u) => { e.position.set(h.x, h.y, h.z), e.scale.set(h.s, h.h, h.s * .85), e.rotation.set(h.x * .05, h.z * .1, .1), e.updateMatrix(), this.trees.setMatrixAt(u, e.matrix), o.set(u % 11 === 0 ? "#d0b278" : u % 3 === 0 ? "#719d85" : u % 3 === 1 ? "#83ab8b" : "#527e71"), this.trees.setColorAt(u, o); }), this.trees.material.onBeforeCompile = h => {
             h.uniforms.harborWind = this.treeWind, h.vertexShader = `uniform float harborWind;
@@ -9495,10 +9495,31 @@ transformed.x += sin(harborWind*.65 + instanceMatrix[3].x*.08 + instanceMatrix[3
             R(r, "cylinder", "#a4b087", d, Ot(d, f) + .75, f, .045, 1.5, .045), R(r, "round", "#b1a073", d, Ot(d, f) + 1.55, f, .14, .32, .14);
         }
         this.outside.add(wi(r));
+        const s = new Wt;
+        for (let h = 0; h < 54; h++) {
+            const u = t() * Math.PI * 2, d = 30 + t() * 58, f = Math.cos(u) * d, g = Math.sin(u) * d;
+            if (Si(f, g) || qs(f, g) < 4 || Math.hypot(f + 25, g - 34) < 13)
+                continue;
+            const v = Ot(f, g), m = .55 + t() * .7;
+            R(s, "ball", h % 4 === 0 ? "#9fb987" : h % 3 === 0 ? "#6f9875" : "#7fa47a", f, v + .42 * m, g, 1.05 * m, .72 * m, .95 * m);
+            if (h % 3 === 0) {
+                const p = h % 2 ? "#e5c28d" : "#d7a6a6";
+                for (let y = 0; y < 3; y++)
+                    R(s, "round", p, f + (y - 1) * .28 * m, v + .9 * m + (y % 2) * .12, g + .08, .11 * m, .11 * m, .11 * m);
+            }
+        }
+        for (let h = 0; h < 34; h++) {
+            const u = (t() - .5) * 72, d = (t() - .5) * 72;
+            if (Math.hypot(u, d) < 13 || Si(u, d))
+                continue;
+            const f = Ot(u, d), g = .8 + t() * .8;
+            R(s, "round", h % 2 ? "#799a75" : "#8cab78", u, f + .24, d, .72 * g, .32 * g, .62 * g);
+        }
+        this.outside.add(wi(s));
     }
     makeHarbor() { const t = new Wt, e = [[-19, -17, "SELA · REPAIRS", "#628d88", 9, 8], [15, -18, "OREN · PROVISIONS", "#b28b62", 10, 8], [-1, 4, "THE WARM KETTLE", "#b28479", 10, 8], [20, -38, "FIELD STATION", "#7894a1", 9, 7], [-25, -38, "HOMESTEAD 01", "#7e9982", 8, 7], [34, -39, "HOMESTEAD 02", "#b99977", 8, 7], [36, -9, "TRAIL SHELTER", "#739287", 7, 7]]; for (const [r, a, o, c, l, h] of e) {
         const u = Ot(r, a);
-        T0(t, r, u, a, o, c, l, h), this.colliders.push({ x: r, z: a, radius: Math.max(l, h) * .53, halfX: l / 2, halfZ: h / 2, zone: "outside", height: 6.6 });
+        T0(t, r, u, a, o, c, l, h), R(t, "box", "#c7b895", r, u + .12, a + h / 2 + .62, Math.min(3.1, l * .42), .24, 1.35), R(t, "box", "#6d8478", r - l * .28, u + 1.35, a + h / 2 + .12, 1.65, .28, .34), R(t, "box", "#6d8478", r + l * .28, u + 1.35, a + h / 2 + .12, 1.65, .28, .34), R(t, "ball", "#7fa079", r - l * .28, u + 1.68, a + h / 2 + .18, .62, .42, .34), R(t, "ball", "#8dae80", r + l * .28, u + 1.68, a + h / 2 + .18, .62, .42, .34), this.colliders.push({ x: r, z: a, radius: Math.max(l, h) * .53, halfX: l / 2, halfZ: h / 2, zone: "outside", height: 6.6 });
     } const n = new Wt; Wc(n), this.outside.add(n), this.hulls.push(n), this.colliders.push({ x: -25, z: 34, radius: 5.6, halfX: 5.4, halfZ: 7.9, zone: "outside", height: 6.2 }); for (const [r, a] of [[-9, 1], [8, 1], [-9, 22], [11, 21], [30, 8], [-32, -19], [21, -30], [-14, 30]])
         Mn(t, r, Ot(r, a), a); an(t, -8, 0, -2), an(t, 8, 0, -2), an(t, 6, 0, 17), an(t, -7, 0, 17); for (let r = 0; r < 12; r++) {
         const a = r < 6 ? -30 + r % 3 * 1.8 : 23 + r % 3 * 1.7, o = r < 6 ? -12 - Math.floor(r / 3) * 2 : -18 - Math.floor((r - 6) / 3) * 2;
@@ -9777,6 +9798,7 @@ class $0 {
     fx = null;
     ambience = null;
     nextChord = 0;
+    musicStep = 0;
     zone = "outside";
     settings;
     constructor(t) { this.settings = t; }
@@ -9796,13 +9818,27 @@ class $0 {
         const o = e.createBiquadFilter();
         o.type = "lowpass", o.frequency.value = 800, a.connect(o), o.connect(this.ambience), a.start(), this.apply(this.settings);
     } await this.context.resume(); }
-    apply(t) { this.settings = t, this.context && (this.master.gain.value = t.master, this.music.gain.value = t.music * .13, this.fx.gain.value = t.effects * .4, this.ambience.gain.value = .2); }
-    tone(t, e = .12, n = "sine", i = .2, r = !1) { const a = this.context; if (!a || a.state !== "running")
-        return; const o = a.createOscillator(), c = a.createGain(); o.type = n, o.frequency.setValueAtTime(t, a.currentTime), c.gain.setValueAtTime(1e-4, a.currentTime), c.gain.exponentialRampToValueAtTime(Math.max(.001, i), a.currentTime + .02), c.gain.exponentialRampToValueAtTime(1e-4, a.currentTime + e), o.connect(c), c.connect(r ? this.music : this.fx), o.start(), o.stop(a.currentTime + e + .05), o.onended = () => { o.disconnect(), c.disconnect(); }; }
+    apply(t) { this.settings = t, this.context && (this.master.gain.value = t.master, this.music.gain.value = t.music * .105, this.fx.gain.value = t.effects * .4, this.ambience.gain.value = .2); }
+    tone(t, e = .12, n = "sine", i = .2, r = !1, a = 0) { const o = this.context; if (!o || o.state !== "running")
+        return; const c = o.createOscillator(), l = o.createGain(), h = o.currentTime + Math.max(0, a); c.type = n, c.frequency.setValueAtTime(t, h), l.gain.setValueAtTime(1e-4, h), l.gain.exponentialRampToValueAtTime(Math.max(.001, i), h + .035), l.gain.exponentialRampToValueAtTime(1e-4, h + e), c.connect(l), l.connect(r ? this.music : this.fx), c.start(h), c.stop(h + e + .06), c.onended = () => { c.disconnect(), l.disconnect(); }; }
+    musicPhrase(t, e) { const n = {
+        cafe: [[164.81, 207.65, 246.94, 329.63], [174.61, 220, 261.63, 349.23], [146.83, 196, 246.94, 293.66]],
+        ship: [[146.83, 220, 293.66, 369.99], [130.81, 196, 261.63, 329.63], [164.81, 246.94, 329.63, 415.3]],
+        orren: [[174.61, 261.63, 349.23, 440], [196, 293.66, 392, 493.88], [164.81, 246.94, 329.63, 440]],
+        store: [[196, 246.94, 329.63, 392], [220, 261.63, 329.63, 440], [174.61, 220, 293.66, 349.23]],
+        cave: [[130.81, 196, 261.63], [146.83, 220, 293.66], [123.47, 185, 246.94]],
+        night: [[174.61, 220, 293.66, 349.23], [146.83, 196, 246.94, 329.63], [164.81, 207.65, 261.63, 329.63]],
+        outside: [[196, 246.94, 293.66, 392], [220, 261.63, 329.63, 440], [174.61, 220, 293.66, 349.23], [196, 261.63, 329.63, 493.88]]
+    }, i = t === "outside" && e > 18 ? "night" : t, r = n[i] ?? n.outside, a = r[this.musicStep++ % r.length], o = t === "cave" ? 0.045 : t === "ship" ? .052 : .06, c = t === "cave" ? "sine" : "triangle";
+        this.tone(a[0] / 2, 4.8, "sine", o * .62, !0, 0);
+        a.slice(0, 3).forEach((l, h) => this.tone(l, 1.55 + h * .18, c, o * (1 - h * .12), !0, h * .62));
+        a[3] && this.musicStep % 2 === 0 && this.tone(a[3], 1.75, "sine", o * .45, !0, 2.05);
+        t === "cafe" && this.musicStep % 3 === 0 && this.tone(a[1] * 2, .9, "sine", o * .25, !0, 2.75);
+    }
     ui() { this.tone(660, .08, "sine", .18); }
     pickup() { this.tone(740, .2, "sine", .22), this.tone(1110, .33, "sine", .09); }
     step() { this.tone(this.zone === "ship" ? 100 : this.zone === "cave" ? 135 : 85, .075, "triangle", .16); }
-    update(t, e, n) { this.zone = e, this.context && (this.nextChord -= t, this.nextChord < 0 && (this.nextChord = 9, (e === "cafe" ? [164.81, 220, 277.18, 329.63] : e === "ship" ? [146.83, 220, 293.66, 369.99] : e === "orren" ? [174.61, 261.63, 349.23, 440] : e === "store" ? [196, 261.63, 329.63] : e === "cave" ? [130.81, 196, 293.66] : n > 18 ? [174.61, 220, 329.63] : [196, 246.94, 293.66, 440]).forEach(r => this.tone(r, 7, "sine", .2, !0)), e === "outside" && n < 19 && this.tone(1200 + Math.random() * 400, .22, "sine", .04))); }
+    update(t, e, n) { this.zone = e, this.context && (this.nextChord -= t, this.nextChord < 0 && (this.nextChord = (e === "cave" ? 7.8 : 5.4) + Math.random() * 2.8, this.musicPhrase(e, n), e === "outside" && n < 19 && Math.random() < .58 && (this.tone(1050 + Math.random() * 450, .18, "sine", .025, !1, .25), this.tone(1280 + Math.random() * 520, .13, "sine", .018, !1, .42)))); }
 }
 function Wl(s, t, e, n) { let i = null, r = -1 / 0; for (const a of s) {
     if (a.zone !== n || a.enabled && !a.enabled())
