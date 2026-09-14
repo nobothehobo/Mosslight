@@ -42,3 +42,12 @@ No gameplay behavior has intentionally been changed in this baseline.
 - Raised the musical layer enough to be audible while preserving the existing filtered ambient noise bed.
 - Added a dev-build cache-buster so Safari reliably loads the new runtime and stylesheet.
 
+## V3R5 development — fullscreen toggle
+
+- Added a fullscreen toggle button to the top-right gameplay HUD.
+- Added a second fullscreen toggle inside the pause menu.
+- Uses the browser Fullscreen API where available, including Safari's prefixed fallback.
+- Adds an immersive-layout fallback when a browser does not expose true fullscreen for web apps.
+- Fullscreen button icon and accessibility label update automatically when entering or leaving fullscreen.
+- Added a Safari cache-buster for the updated runtime and stylesheet.
+
