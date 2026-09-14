@@ -1,0 +1,40 @@
+name: Apply V3R5.2 fullscreen visibility patch
+
+on:
+  push:
+    branches:
+      - development
+    paths:
+      - "tools/apply-v3r52-fullscreen-obvious.py"
+      - ".github/workflows/apply-v3r52-fullscreen-obvious.yml"
+
+permissions:
+  contents: write
+
+jobs:
+  apply:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Checkout development
+        uses: actions/checkout@v4
+        with:
+          ref: development
+          fetch-depth: 0
+
+      - name: Apply fullscreen visibility patch
+        run: python tools/apply-v3r52-fullscreen-obvious.py
+
+      - name: Validate runtime
+        run: |
+          node --check working/assets/mosslight-v3-readable.js
+          grep -q 'id="fullscreen-fab"' working/assets/mosslight-v3-readable.js
+          grep -q 'v=3.52' working/index.html
+          test -f working/manifest.webmanifest
+
+      - name: Commit patch
+        run: |
+          git config user.name "Mosslight Development Bot"
+          git config user.email "actions@users.noreply.github.com"
+          git add CHANGELOG.md source/legacy/mosslight-v3-runtime.js source/legacy/mosslight-v3.css working/assets/mosslight-v3-readable.js working/assets/mosslight-v3.css working/index.html working/manifest.webmanifest
+          git commit -m "Make fullscreen control obvious on iPad" || exit 0
+          git push origin development
