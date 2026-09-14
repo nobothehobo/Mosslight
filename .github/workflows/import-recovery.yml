@@ -3,7 +3,7 @@ name: Import Mosslight recovery snapshot
 on:
   push:
     paths:
-      - ".recovery/READY"
+      - "archives/Mosslight_V3R1_Reconstructed_Source.zip"
 
 permissions:
   contents: write
@@ -17,15 +17,15 @@ jobs:
         with:
           fetch-depth: 0
 
-      - name: Reassemble recovery archive
+      - name: Unpack recovery archive
         shell: bash
         run: |
           set -euo pipefail
-          cat .recovery/sourcezip.part* > /tmp/mosslight-source.b64
-          base64 --decode /tmp/mosslight-source.b64 > /tmp/Mosslight_V3R1_Reconstructed_Source.zip
-          sha256sum /tmp/Mosslight_V3R1_Reconstructed_Source.zip
+          archive="archives/Mosslight_V3R1_Reconstructed_Source.zip"
+          test -f "$archive"
+          sha256sum "$archive"
           mkdir -p /tmp/mosslight-import
-          unzip -q /tmp/Mosslight_V3R1_Reconstructed_Source.zip -d /tmp/mosslight-import
+          unzip -q "$archive" -d /tmp/mosslight-import
 
       - name: Import exact recovered source tree
         shell: bash
@@ -34,8 +34,6 @@ jobs:
           src="/tmp/mosslight-import/Mosslight_V3R1_Reconstructed_Source"
           test -d "$src"
           rsync -a "$src"/ ./
-          mkdir -p archives
-          cp /tmp/Mosslight_V3R1_Reconstructed_Source.zip archives/Mosslight_V3R1_Reconstructed_Source.zip
 
       - name: Verify critical recovery files
         shell: bash
@@ -56,7 +54,7 @@ jobs:
           set -euo pipefail
           git config user.name "Mosslight Recovery Bot"
           git config user.email "actions@users.noreply.github.com"
-          git add README.md CHANGELOG.md RECOVERY_MANIFEST.json package.json tsconfig.json baseline working source docs .github/workflows/deploy-pages.yml archives
+          git add README.md CHANGELOG.md RECOVERY_MANIFEST.json package.json tsconfig.json baseline working source docs .github/workflows/deploy-pages.yml
           if git diff --cached --quiet; then
             echo "Nothing new to commit."
             exit 0
