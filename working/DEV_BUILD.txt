@@ -1,1 +1,1 @@
-Mosslight V3R5.1 development preview — fullscreen visibility hotfix
+Mosslight V3R5.2 development preview — obvious fullscreen + iPad standalone support
