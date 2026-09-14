@@ -1,0 +1,9 @@
+{
+  "stock": [
+    "ration",
+    "battery",
+    "parts",
+    "tea"
+  ],
+  "buyback": 0.5
+}

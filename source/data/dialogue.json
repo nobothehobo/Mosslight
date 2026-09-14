@@ -1,0 +1,599 @@
+{
+  "sela.complete": {
+    "speaker": "Sela Venn",
+    "conditions": [
+      {
+        "quest": "signal",
+        "stage": 3
+      }
+    ],
+    "text": "Couplings are steady. I’ve isolated that pulse, but Ivo wants a look at the echo. Two repair fittings at your workbench will finish the job. Then your little ship can be a home again.",
+    "responses": [
+      {
+        "text": "Does this mean I can take off?",
+        "next": "sela.flight"
+      },
+      {
+        "text": "See you around.",
+        "actions": [
+          {
+            "type": "close"
+          }
+        ]
+      }
+    ]
+  },
+  "sela.return": {
+    "speaker": "Sela Venn",
+    "conditions": [
+      {
+        "quest": "signal",
+        "stage": 2
+      }
+    ],
+    "text": "That’s the same rhythm. Six beats, a pause, then six more. Wear and tear doesn’t usually have a favorite song. I’ll contain the interference. Take these fittings, and your pay. You’ve earned a quiet evening.",
+    "responses": [
+      {
+        "text": "Hand over the echo module.",
+        "actions": [
+          {
+            "type": "completeQuest",
+            "id": "signal"
+          }
+        ],
+        "next": "sela.done"
+      },
+      {
+        "text": "See you around.",
+        "actions": [
+          {
+            "type": "close"
+          }
+        ]
+      }
+    ]
+  },
+  "sela.active": {
+    "speaker": "Sela Venn",
+    "conditions": [
+      {
+        "quest": "signal",
+        "stage": 1
+      }
+    ],
+    "text": "Amber trail markers lead northwest through Fernwood. The old array is past the fallen mast. Bring back its echo module. And don’t let the mosslings convince you they’re starving. They’re very good at that.",
+    "responses": [
+      {
+        "text": "What’s the settlement like?",
+        "next": "sela.town"
+      },
+      {
+        "text": "See you around.",
+        "actions": [
+          {
+            "type": "close"
+          }
+        ]
+      }
+    ]
+  },
+  "sela.start": {
+    "speaker": "Sela Venn",
+    "text": "You must be the pilot of that lovely old rust-bird. Your drive is fine. Navigation… less fine. Funny thing: our lamps started flickering in exactly the same rhythm. There’s an abandoned survey array out in Fernwood. Fancy taking a walk?",
+    "responses": [
+      {
+        "text": "I’ll check the survey array.",
+        "actions": [
+          {
+            "type": "startQuest",
+            "id": "signal"
+          }
+        ],
+        "next": "sela.accepted"
+      },
+      {
+        "text": "Tell me about the settlement.",
+        "next": "sela.town"
+      },
+      {
+        "text": "See you around.",
+        "actions": [
+          {
+            "type": "close"
+          }
+        ]
+      }
+    ]
+  },
+  "sela.accepted": {
+    "speaker": "Sela Venn",
+    "text": "Follow the amber markers northwest. Your journal and map have the location. Take your time. Pick a few lanterncaps, watch the little creatures. A problem can wait long enough for a good walk.",
+    "responses": [
+      {
+        "text": "I’m on my way.",
+        "actions": [
+          {
+            "type": "close"
+          }
+        ]
+      }
+    ]
+  },
+  "sela.done": {
+    "speaker": "Sela Venn",
+    "text": "There. Quiet, for now. Ivo has been listening to the plants, if you can believe it. Show him what we found. Your workbench is ready when you get back aboard.",
+    "responses": [
+      {
+        "text": "Thank you, Sela.",
+        "actions": [
+          {
+            "type": "close"
+          }
+        ]
+      }
+    ]
+  },
+  "sela.town": {
+    "speaker": "Sela Venn",
+    "text": "Mosslight Harbor. Eighty-six people, three working kettles, one extremely opinionated weather station. Oren stocks the necessities. Neri supplies the reasons to stay.",
+    "responses": [
+      {
+        "text": "Sounds like a good place to be grounded.",
+        "actions": [
+          {
+            "type": "close"
+          }
+        ]
+      }
+    ]
+  },
+  "sela.flight": {
+    "speaker": "Sela Venn",
+    "text": "The fittings will stabilize navigation. Take the pilot seat and chart a course to Orren when you’re ready. And come back. That’s what a harbor is for.",
+    "responses": [
+      {
+        "text": "See you around.",
+        "actions": [
+          {
+            "type": "close"
+          }
+        ]
+      }
+    ]
+  },
+  "oren.start": {
+    "speaker": "Oren Vale",
+    "text": "A new face! Welcome. If it powers a torch, fills a belly, or stops a worrying rattle, I probably sell it. I also buy lanterncaps, cloud quartz, and clean salvage. Fair prices, modest gossip.",
+    "responses": [
+      {
+        "text": "Show me your provisions.",
+        "actions": [
+          {
+            "type": "shop"
+          }
+        ]
+      },
+      {
+        "text": "What should I take on the trail?",
+        "next": "oren.trail"
+      },
+      {
+        "text": "See you around.",
+        "actions": [
+          {
+            "type": "close"
+          }
+        ]
+      }
+    ]
+  },
+  "oren.trail": {
+    "speaker": "Oren Vale",
+    "text": "A trailcake helps with long runs. Batteries and repair fittings are always useful. Keep three lanterncaps for Ivo before you sell the rest. He’s paying well for field notes, too.",
+    "responses": [
+      {
+        "text": "Let’s trade.",
+        "actions": [
+          {
+            "type": "shop"
+          }
+        ]
+      },
+      {
+        "text": "See you around.",
+        "actions": [
+          {
+            "type": "close"
+          }
+        ]
+      }
+    ]
+  },
+  "ivo.done": {
+    "speaker": "Ivo Quill",
+    "conditions": [
+      {
+        "quest": "research",
+        "stage": 3
+      },
+      {
+        "quest": "signal",
+        "stage": 3
+      }
+    ],
+    "text": "Your echo module and the lanterncap pulses line up. The old array isn’t broadcasting at the forest. It’s listening. Whatever your ship heard, the forest heard first. We may be standing on an enormous conversation.",
+    "responses": [
+      {
+        "text": "I think I’ll stay and listen.",
+        "actions": [
+          {
+            "type": "close"
+          }
+        ]
+      }
+    ]
+  },
+  "ivo.return": {
+    "speaker": "Ivo Quill",
+    "conditions": [
+      {
+        "quest": "research",
+        "stage": 2
+      }
+    ],
+    "text": "Two observations and three lanterncaps! No frightened creatures, no collecting jars full of unhappy things. Exactly the kind of science I like. Here’s your field stipend, and some tea from Neri.",
+    "responses": [
+      {
+        "text": "Share the notes and samples.",
+        "actions": [
+          {
+            "type": "completeQuest",
+            "id": "research"
+          }
+        ],
+        "next": "ivo.thanks"
+      },
+      {
+        "text": "See you around.",
+        "actions": [
+          {
+            "type": "close"
+          }
+        ]
+      }
+    ]
+  },
+  "ivo.active": {
+    "speaker": "Ivo Quill",
+    "conditions": [
+      {
+        "quest": "research",
+        "stage": 1
+      }
+    ],
+    "text": "Observe two different mosslings from a few paces away. They bolt if you sprint right at them. Three lanterncaps as well, please. The blue ones grow beside the woodland trail and pond.",
+    "responses": [
+      {
+        "text": "What about the signal?",
+        "next": "ivo.signal",
+        "conditions": [
+          {
+            "quest": "signal",
+            "stage": 3
+          }
+        ]
+      },
+      {
+        "text": "See you around.",
+        "actions": [
+          {
+            "type": "close"
+          }
+        ]
+      }
+    ]
+  },
+  "ivo.complete": {
+    "speaker": "Ivo Quill",
+    "conditions": [
+      {
+        "quest": "research",
+        "stage": 3
+      }
+    ],
+    "text": "The samples are settling nicely. Mosslings pause before every lanterncap pulse. I wonder what they can hear that we can’t.",
+    "responses": [
+      {
+        "text": "The array was listening.",
+        "next": "ivo.signal",
+        "conditions": [
+          {
+            "quest": "signal",
+            "stage": 3
+          }
+        ]
+      },
+      {
+        "text": "See you around.",
+        "actions": [
+          {
+            "type": "close"
+          }
+        ]
+      }
+    ]
+  },
+  "ivo.start": {
+    "speaker": "Ivo Quill",
+    "text": "Oh! A traveler. Excellent. Would you help me study the mosslings? Observe two different ones, and gather three lanterncaps. No fighting, no cages. Just pay attention. It’s surprisingly rare.",
+    "responses": [
+      {
+        "text": "I’d like to help.",
+        "actions": [
+          {
+            "type": "startQuest",
+            "id": "research"
+          }
+        ],
+        "next": "ivo.accepted"
+      },
+      {
+        "text": "Sela recovered the signal.",
+        "next": "ivo.signal",
+        "conditions": [
+          {
+            "quest": "signal",
+            "stage": 3
+          }
+        ]
+      },
+      {
+        "text": "See you around.",
+        "actions": [
+          {
+            "type": "close"
+          }
+        ]
+      }
+    ]
+  },
+  "ivo.accepted": {
+    "speaker": "Ivo Quill",
+    "text": "You already have a field scanner in your suit. Approach at a walk and use Observe. The meadow and Glasswater Pond are good places to look. I’ve marked them on your map.",
+    "responses": [
+      {
+        "text": "I’ll keep my distance.",
+        "actions": [
+          {
+            "type": "close"
+          }
+        ]
+      }
+    ]
+  },
+  "ivo.signal": {
+    "speaker": "Ivo Quill",
+    "text": "Six beats. The lanterncaps do that at night! Before the arrays were abandoned, a surveyor wrote: “We thought we were alone because we only listened for voices.” Tamsin might know where the rest of that journal is.",
+    "responses": [
+      {
+        "text": "See you around.",
+        "actions": [
+          {
+            "type": "close"
+          }
+        ]
+      }
+    ]
+  },
+  "ivo.thanks": {
+    "speaker": "Ivo Quill",
+    "text": "Here’s the strange part: the gills glow a heartbeat before the array pulses. Not an echo. A reply? Come back after you’ve helped Sela. We’ll compare notes.",
+    "responses": [
+      {
+        "text": "See you around.",
+        "actions": [
+          {
+            "type": "close"
+          }
+        ]
+      }
+    ]
+  },
+  "neri.gift": {
+    "speaker": "Neri Bloom",
+    "conditions": [
+      {
+        "flag": "teaGift",
+        "not": true
+      }
+    ],
+    "text": "New arrivals get a cup on the house. House rule. You look like someone whose ship has decided to become a garden ornament. Sit for a minute. The universe can be strange after tea.",
+    "responses": [
+      {
+        "text": "I could use that. Thank you.",
+        "actions": [
+          {
+            "type": "give",
+            "id": "tea",
+            "count": 1
+          },
+          {
+            "type": "flag",
+            "id": "teaGift"
+          }
+        ],
+        "next": "neri.home"
+      },
+      {
+        "text": "What brought you here?",
+        "next": "neri.home"
+      },
+      {
+        "text": "See you around.",
+        "actions": [
+          {
+            "type": "close"
+          }
+        ]
+      }
+    ]
+  },
+  "neri.start": {
+    "speaker": "Neri Bloom",
+    "text": "Welcome back. The kettle’s warm. At lunch, half the settlement ends up out here pretending they didn’t come for a second cake.",
+    "responses": [
+      {
+        "text": "What makes this place home?",
+        "next": "neri.home"
+      },
+      {
+        "text": "See you around.",
+        "actions": [
+          {
+            "type": "close"
+          }
+        ]
+      }
+    ]
+  },
+  "neri.home": {
+    "speaker": "Neri Bloom",
+    "text": "Home is where someone notices you’ve been gone. Take the long way back from the woods. Look over the pond. Then come tell us what you found. That’s how it starts.",
+    "responses": [
+      {
+        "text": "I’ll come back.",
+        "actions": [
+          {
+            "type": "close"
+          }
+        ]
+      }
+    ]
+  },
+  "tamsin.return": {
+    "speaker": "Tamsin Reed",
+    "conditions": [
+      {
+        "quest": "cave",
+        "stage": 2
+      }
+    ],
+    "text": "That’s Elian’s recording. The first surveyor. We kept the lamp burning because… well, it felt wrong to turn it off. What did it say?",
+    "responses": [
+      {
+        "text": "“Leave a light for whoever comes next.”",
+        "actions": [
+          {
+            "type": "completeQuest",
+            "id": "cave"
+          }
+        ],
+        "next": "tamsin.done"
+      },
+      {
+        "text": "See you around.",
+        "actions": [
+          {
+            "type": "close"
+          }
+        ]
+      }
+    ]
+  },
+  "tamsin.active": {
+    "speaker": "Tamsin Reed",
+    "conditions": [
+      {
+        "quest": "cave",
+        "stage": 1
+      }
+    ],
+    "text": "Blue markers, east of the pond. The tunnel is tucked under the ridge. Your suit lamp will come on inside. Check the old desk at the back. No danger in there. Just time.",
+    "responses": [
+      {
+        "text": "See you around.",
+        "actions": [
+          {
+            "type": "close"
+          }
+        ]
+      }
+    ]
+  },
+  "tamsin.complete": {
+    "speaker": "Tamsin Reed",
+    "conditions": [
+      {
+        "quest": "cave",
+        "stage": 3
+      }
+    ],
+    "text": "We’ll keep a copy in the community hall. There’s an overlook southeast of town if you need to think. On a clear night you can see the rings above the ridge.",
+    "responses": [
+      {
+        "text": "See you around.",
+        "actions": [
+          {
+            "type": "close"
+          }
+        ]
+      }
+    ]
+  },
+  "tamsin.start": {
+    "speaker": "Tamsin Reed",
+    "text": "If you’re heading out, there’s an old survey tunnel beyond Glasswater. I found a lamp still burning. Someone lived there before we built the harbor. Would you look for a recording? I’d like to know their name.",
+    "responses": [
+      {
+        "text": "I’ll find what they left behind.",
+        "actions": [
+          {
+            "type": "startQuest",
+            "id": "cave"
+          }
+        ],
+        "next": "tamsin.accepted"
+      },
+      {
+        "text": "Any advice for the trails?",
+        "next": "tamsin.advice"
+      },
+      {
+        "text": "See you around.",
+        "actions": [
+          {
+            "type": "close"
+          }
+        ]
+      }
+    ]
+  },
+  "tamsin.accepted": {
+    "speaker": "Tamsin Reed",
+    "text": "Follow the blue markers east, past Glasswater Pond. The tunnel’s entrance is beneath the pale stone arch. And walk around the mosslings, please. They were here first.",
+    "responses": [
+      {
+        "text": "See you around.",
+        "actions": [
+          {
+            "type": "close"
+          }
+        ]
+      }
+    ]
+  },
+  "tamsin.advice": {
+    "speaker": "Tamsin Reed",
+    "text": "Amber leads to the array. Blue leads to the tunnel. Stone cairns lead to Farlook Ridge. The pond is shallow by the edges, but take the path around it. Save a little breath for the view.",
+    "responses": [
+      {
+        "text": "See you around.",
+        "actions": [
+          {
+            "type": "close"
+          }
+        ]
+      }
+    ]
+  }
+}

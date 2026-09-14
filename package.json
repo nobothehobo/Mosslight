@@ -1,0 +1,17 @@
+{
+  "name": "mosslight-harbor-recovered",
+  "private": true,
+  "version": "0.2.0-recovered.1",
+  "type": "module",
+  "scripts": {
+    "serve:working": "vite working",
+    "build:future": "vite build"
+  },
+  "dependencies": {
+    "three": "^0.180.0"
+  },
+  "devDependencies": {
+    "vite": "^7.0.0",
+    "typescript": "^5.9.0"
+  }
+}

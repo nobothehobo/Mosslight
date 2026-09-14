@@ -1,0 +1,28 @@
+{
+  "sela": [
+    "sela.complete",
+    "sela.return",
+    "sela.active",
+    "sela.start"
+  ],
+  "oren": [
+    "oren.start"
+  ],
+  "ivo": [
+    "ivo.done",
+    "ivo.return",
+    "ivo.active",
+    "ivo.complete",
+    "ivo.start"
+  ],
+  "neri": [
+    "neri.gift",
+    "neri.start"
+  ],
+  "tamsin": [
+    "tamsin.return",
+    "tamsin.active",
+    "tamsin.complete",
+    "tamsin.start"
+  ]
+}

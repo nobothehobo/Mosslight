@@ -1,0 +1,51 @@
+[
+  {
+    "id": "harbor",
+    "name": "Mosslight Harbor",
+    "x": 0,
+    "z": 0,
+    "short": "Harbor"
+  },
+  {
+    "id": "ship",
+    "name": "The Little Elsewhere",
+    "x": -25,
+    "z": 34,
+    "short": "Your ship"
+  },
+  {
+    "id": "pond",
+    "name": "Glasswater Pond",
+    "x": 76,
+    "z": -12,
+    "short": "Glasswater"
+  },
+  {
+    "id": "forest",
+    "name": "Fernwood",
+    "x": -73,
+    "z": -75,
+    "short": "Fernwood"
+  },
+  {
+    "id": "beacon",
+    "name": "Survey Array 04",
+    "x": -106,
+    "z": -137,
+    "short": "Array 04"
+  },
+  {
+    "id": "cave",
+    "name": "The Lantern Tunnel",
+    "x": 130,
+    "z": -119,
+    "short": "Tunnel"
+  },
+  {
+    "id": "overlook",
+    "name": "Farlook Ridge",
+    "x": 134,
+    "z": 77,
+    "short": "Farlook"
+  }
+]

@@ -1,0 +1,125 @@
+{
+  "supper": {
+    "id": "supper",
+    "title": "Something warm to share",
+    "description": "Neri has a spare recipe. Catch a glassfin at the pond, gather a lanterncap, and cook a bowl of chowder in your ship galley.",
+    "stages": [
+      "Ask Neri about a recipe.",
+      "Cook harbor chowder with one glassfin and one lanterncap.",
+      "Bring a bowl of chowder to Neri.",
+      "A recipe becomes a tradition."
+    ],
+    "reward": 35,
+    "completion": [
+      {
+        "item": "stew",
+        "count": 1
+      }
+    ]
+  },
+  "garden": {
+    "id": "garden",
+    "title": "The garden between stars",
+    "description": "The array’s echo names a listening garden on Orren. Ivo would like a seed from the old conservatory.",
+    "stages": [
+      "After fixing navigation, ask Ivo about Orren.",
+      "Fly to Orren. Find the Listening Garden and recover a seed.",
+      "Return to Ivo on Mosslight with the cinderbloom seed.",
+      "Two worlds, one quiet conversation."
+    ],
+    "reward": 90,
+    "rewardItems": [
+      {
+        "id": "moonfruit",
+        "count": 3
+      }
+    ],
+    "completion": [
+      {
+        "item": "seed",
+        "count": 1
+      }
+    ]
+  },
+  "signal": {
+    "id": "signal",
+    "title": "A signal among the leaves",
+    "description": "Your navigation fault shares a rhythm with interference from the abandoned survey array. Sela thinks the forest holds an answer.",
+    "stages": [
+      "Speak with Sela, the mechanic.",
+      "Follow the amber trail into Fernwood. Examine the survey beacon.",
+      "Bring the echo module back to Sela.",
+      "The interference is contained. Ask Ivo what the signal means."
+    ],
+    "reward": 70,
+    "rewardItems": [
+      {
+        "id": "parts",
+        "count": 2
+      }
+    ],
+    "completion": [
+      {
+        "flag": "beacon"
+      },
+      {
+        "item": "module",
+        "count": 1
+      }
+    ]
+  },
+  "research": {
+    "id": "research",
+    "title": "Small, luminous lives",
+    "description": "Ivo suspects that the lanterncaps and the gentle mosslings hear something the settlement cannot. Observe them without causing harm.",
+    "stages": [
+      "Meet Ivo at the research hut.",
+      "Observe two different mosslings and gather three lanterncaps.",
+      "Return to Ivo with your notes and three lanterncaps.",
+      "The forest has a rhythm of its own."
+    ],
+    "reward": 45,
+    "rewardItems": [
+      {
+        "id": "tea",
+        "count": 2
+      }
+    ],
+    "completion": [
+      {
+        "observed": 2
+      },
+      {
+        "item": "glowcap",
+        "count": 3
+      }
+    ]
+  },
+  "cave": {
+    "id": "cave",
+    "title": "Someone was here before",
+    "description": "Tamsin found an old survey tunnel beneath the eastern ridge. A lamp was still lit inside. Find out who left it there.",
+    "stages": [
+      "Speak to Tamsin by the trail shelter.",
+      "Follow the blue trail to the ridge tunnel. Recover the old recording.",
+      "Return the surveyor’s keepsake to Tamsin.",
+      "The first surveyor is remembered."
+    ],
+    "reward": 55,
+    "rewardItems": [
+      {
+        "id": "mineral",
+        "count": 3
+      }
+    ],
+    "completion": [
+      {
+        "flag": "archive"
+      },
+      {
+        "item": "archive",
+        "count": 1
+      }
+    ]
+  }
+}

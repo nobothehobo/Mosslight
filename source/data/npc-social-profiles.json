@@ -1,0 +1,62 @@
+[
+  {
+    "warmth": 0.8,
+    "energy": 0.5,
+    "humor": 0.9,
+    "interest": "Old engines",
+    "lines": [
+      "Morning, pilot. I saved you a place by the heater. Your ship can wait until you’ve warmed up.",
+      "You’re just in time. Sit beside me while I work, if you like. Company improves the diagnostics.",
+      "There you are. I checked your landing lights before supper. They’ll be waiting whenever you come home."
+    ],
+    "reply": "You understand machinery: a little attention, and knowing when to stop."
+  },
+  {
+    "warmth": 1,
+    "energy": 0.8,
+    "humor": 0.6,
+    "interest": "Tea and local gossip",
+    "lines": [
+      "Good morning! I set aside the softer trail biscuits for you. No hurry; tell me how you slept.",
+      "I stock three kinds of biscuits. Neri maintains there are only two good kinds.",
+      "I’m glad you stopped in. If you’re short of something for the journey, we’ll work it out together."
+    ],
+    "reply": "I’ll put the kettle on. No purchase required for a decent conversation."
+  },
+  {
+    "warmth": 0.7,
+    "energy": 1,
+    "humor": 0.5,
+    "interest": "Living signals",
+    "lines": [
+      "You’re here! I found something wonderful at dawn, and you were the first person I wanted to tell.",
+      "I was meant to catalogue samples. Instead I discovered six new questions.",
+      "The plants keep different hours from us. I’m trying to be a considerate visitor."
+    ],
+    "reply": "Exactly! Curiosity is a useful instrument, provided we remember to listen."
+  },
+  {
+    "warmth": 1,
+    "energy": 0.6,
+    "humor": 0.7,
+    "interest": "Recipes and stories",
+    "lines": [
+      "A quiet breakfast is a perfectly good adventure.",
+      "Sela calls this lunch. Oren calls it market research. They both order seconds.",
+      "I kept a little pot warm in case you came by. Come sit; you don’t have to have a story tonight."
+    ],
+    "reply": "Then stay a while. A place becomes home one ordinary evening at a time."
+  },
+  {
+    "warmth": 0.6,
+    "energy": 0.7,
+    "humor": 0.7,
+    "interest": "Tracks and weather",
+    "lines": [
+      "Fresh tracks near the water. Walking slowly is how you see the good things.",
+      "Checked the trail signs. One was pointing at a bush. The bush denied everything.",
+      "It’s good to see you safe. I’ll walk the first bend with you if the dark feels a little too quiet."
+    ],
+    "reply": "That’s the spirit. Bring back a story, and leave the trail a little better."
+  }
+]

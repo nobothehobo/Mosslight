@@ -1,0 +1,132 @@
+{
+  "fish": {
+    "name": "Glassfin",
+    "description": "A bright little pond fish. Cook with a lanterncap aboard your ship.",
+    "category": "Ingredient",
+    "stackSize": 20,
+    "value": 9,
+    "rarity": "Common",
+    "icon": "◁",
+    "color": "#98d6df"
+  },
+  "stew": {
+    "name": "Harbor chowder",
+    "description": "Glassfin, lanterncaps and a pinch of home. Restores stamina. Neri would love a bowl.",
+    "category": "Food",
+    "stackSize": 20,
+    "value": 24,
+    "rarity": "Homemade",
+    "icon": "♨",
+    "color": "#eac19b"
+  },
+  "seed": {
+    "name": "Cinderbloom seed",
+    "description": "A hardy seed from Orren’s listening garden. Ivo will want to study it.",
+    "category": "Quest",
+    "stackSize": 1,
+    "value": 0,
+    "rarity": "Unique",
+    "icon": "❋",
+    "color": "#e3b2dc"
+  },
+  "moonfruit": {
+    "name": "Sunplum",
+    "description": "A tart golden fruit from Orren. Good for tea, or a long walk.",
+    "category": "Food",
+    "stackSize": 30,
+    "value": 8,
+    "rarity": "Uncommon",
+    "icon": "●",
+    "color": "#f1b479"
+  },
+  "ration": {
+    "name": "Orchard trailcake",
+    "description": "Oat, honeyfruit, and a little homesickness. Restores all stamina and grants 90 seconds of easy running.",
+    "category": "Food",
+    "stackSize": 20,
+    "value": 8,
+    "rarity": "Common",
+    "icon": "◒",
+    "color": "#e9bd82"
+  },
+  "battery": {
+    "name": "Field cell",
+    "description": "A sturdy power cell. Survey equipment never seems to have enough of these.",
+    "category": "Component",
+    "stackSize": 20,
+    "value": 12,
+    "rarity": "Common",
+    "icon": "▥",
+    "color": "#90c9d2"
+  },
+  "parts": {
+    "name": "Repair fittings",
+    "description": "Universal couplings for very non-universal spacecraft. Useful at the ship workbench.",
+    "category": "Component",
+    "stackSize": 20,
+    "value": 18,
+    "rarity": "Common",
+    "icon": "⚙",
+    "color": "#b5c2cb"
+  },
+  "module": {
+    "name": "Echo module",
+    "description": "Recovered from the woodland beacon. It carries a pulse identical to your ship’s fault.",
+    "category": "Quest",
+    "stackSize": 1,
+    "value": 0,
+    "rarity": "Unique",
+    "icon": "◇",
+    "color": "#9fe0e7"
+  },
+  "glowcap": {
+    "name": "Lanterncap",
+    "description": "A soft blue mushroom. The gills glow in time with the old survey towers.",
+    "category": "Research",
+    "stackSize": 30,
+    "value": 5,
+    "rarity": "Common",
+    "icon": "♧",
+    "color": "#95d9ce"
+  },
+  "mineral": {
+    "name": "Cloud quartz",
+    "description": "Milky crystal with a faint blue core. Oren buys it for the settlement’s filters.",
+    "category": "Resource",
+    "stackSize": 30,
+    "value": 7,
+    "rarity": "Uncommon",
+    "icon": "◆",
+    "color": "#bacbfa"
+  },
+  "scrap": {
+    "name": "Salvaged alloy",
+    "description": "Clean scrap from a time when everything had sharp corners. Tradable with Oren.",
+    "category": "Resource",
+    "stackSize": 30,
+    "value": 4,
+    "rarity": "Common",
+    "icon": "⬡",
+    "color": "#c4b4a0"
+  },
+  "archive": {
+    "name": "Surveyor’s keepsake",
+    "description": "A scratched recording wafer. Someone wanted the next visitor to remember this place.",
+    "category": "Quest",
+    "stackSize": 1,
+    "value": 0,
+    "rarity": "Unique",
+    "icon": "▣",
+    "color": "#e7c195"
+  },
+  "tea": {
+    "name": "Moonmint tea",
+    "description": "A little warmth for the road. Restores stamina and grants 90 seconds of easy running.",
+    "category": "Food",
+    "stackSize": 20,
+    "value": 6,
+    "rarity": "Common",
+    "icon": "♨",
+    "color": "#aad3a1"
+  }
+}

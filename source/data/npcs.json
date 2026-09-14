@@ -1,0 +1,107 @@
+[
+  {
+    "id": "npc_mechanic_001",
+    "name": "Sela Venn",
+    "role": "Mechanic",
+    "personality": "A steady hand. A dry joke.",
+    "color": "#e4a069",
+    "skin": "#a86d51",
+    "hair": "#493b38",
+    "style": "bun",
+    "height": 1.03,
+    "accessory": "goggles",
+    "work": {
+      "x": -17,
+      "z": -7
+    },
+    "home": {
+      "x": -25,
+      "z": -28
+    },
+    "dialogue": "sela"
+  },
+  {
+    "id": "npc_store_001",
+    "name": "Oren Vale",
+    "role": "Provisions",
+    "personality": "Knows everybody’s favorite tea.",
+    "color": "#98b998",
+    "skin": "#dca482",
+    "hair": "#5c4539",
+    "style": "cap",
+    "height": 1.13,
+    "accessory": "apron",
+    "work": {
+      "x": 15,
+      "z": -7
+    },
+    "home": {
+      "x": 25,
+      "z": -29
+    },
+    "dialogue": "oren"
+  },
+  {
+    "id": "npc_researcher_001",
+    "name": "Ivo Quill",
+    "role": "Field researcher",
+    "personality": "Always one question from a discovery.",
+    "color": "#cfcec0",
+    "skin": "#805942",
+    "hair": "#252a30",
+    "style": "puff",
+    "height": 0.96,
+    "accessory": "pack",
+    "work": {
+      "x": 20,
+      "z": -27
+    },
+    "home": {
+      "x": 25,
+      "z": -29
+    },
+    "dialogue": "ivo"
+  },
+  {
+    "id": "npc_cafe_001",
+    "name": "Neri Bloom",
+    "role": "Café keeper",
+    "personality": "Makes a place feel like home.",
+    "color": "#d5a4b7",
+    "skin": "#ebba95",
+    "hair": "#825945",
+    "style": "bob",
+    "height": 0.97,
+    "accessory": "apron",
+    "work": {
+      "x": -1,
+      "z": 13
+    },
+    "home": {
+      "x": -25,
+      "z": -28
+    },
+    "dialogue": "neri"
+  },
+  {
+    "id": "npc_ranger_001",
+    "name": "Tamsin Reed",
+    "role": "Trail ranger",
+    "personality": "Notices the things others walk past.",
+    "color": "#7faca4",
+    "skin": "#b88360",
+    "hair": "#d0bc8c",
+    "style": "short",
+    "height": 1.08,
+    "accessory": "pack",
+    "work": {
+      "x": 32,
+      "z": 2
+    },
+    "home": {
+      "x": 25,
+      "z": -29
+    },
+    "dialogue": "tamsin"
+  }
+]

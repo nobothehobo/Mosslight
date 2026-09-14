@@ -1,0 +1,46 @@
+{
+  "recoveryVersion": "V3R1",
+  "source": "Mosslight V3.webarchive",
+  "productionVersion": "0.2.0",
+  "baselineJS": {
+    "file": "baseline/assets/index-Cf9eUsqG.js",
+    "sha256": "e8a2cd4778d4e38c2ec58d35ac105e9468e10ce6b0dd5e130b94af98daca2f64"
+  },
+  "baselineCSS": {
+    "file": "baseline/assets/index-DeL8tS3c.css",
+    "sha256": "803812eb7537ca972e1450d104ca7a27c199c7f26b18e38165c25a9e21663a31"
+  },
+  "workingRuntime": {
+    "file": "working/assets/mosslight-v3-readable.js",
+    "sha256": "4829af74723d9c7cb44bef4450c04449fe4fd7c61b60760e49aac7a0144bb65c"
+  },
+  "noSourceMap": true,
+  "extractedData": [
+    "version.json",
+    "items.json",
+    "shop.json",
+    "quests.json",
+    "locations.json",
+    "npcs.json",
+    "dialogue.json",
+    "dialogue-routing.json",
+    "npc-social-profiles.json"
+  ],
+  "extractedSystems": [
+    "NavigationState",
+    "NavigationUI",
+    "FlightTravelSystem",
+    "ShipInteriorWindowSystem",
+    "ActivitiesSystem",
+    "InteractionController",
+    "GameplayState",
+    "PersistenceStore",
+    "RateLookController",
+    "InputSystem",
+    "Renderer",
+    "WorldController",
+    "GameUI",
+    "AudioSystem",
+    "GameApplication"
+  ]
+}
