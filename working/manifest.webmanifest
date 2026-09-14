@@ -1,0 +1,10 @@
+{
+  "name": "Mosslight Harbor",
+  "short_name": "Mosslight",
+  "start_url": "./",
+  "scope": "./",
+  "display": "fullscreen",
+  "background_color": "#173640",
+  "theme_color": "#102b32",
+  "orientation": "landscape"
+}

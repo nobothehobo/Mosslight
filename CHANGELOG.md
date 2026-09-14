@@ -57,3 +57,10 @@ No gameplay behavior has intentionally been changed in this baseline.
 - The existing in-game HUD and pause-menu fullscreen controls remain available.
 - Updated cache-busting so Safari loads the new control immediately.
 
+## V3R5.2 development — fullscreen visibility + iPad standalone support
+
+- Added a clearly labeled floating Full screen pill inside gameplay so the control is impossible to confuse with the other HUD icons.
+- Kept the icon-only HUD control and pause-menu control.
+- Added iPad/iPhone standalone web-app metadata and a web manifest for a browser-chrome-free Home Screen launch where Safari does not permit page fullscreen.
+- Bumped Safari cache version again.
+
