@@ -71,3 +71,13 @@ No gameplay behavior has intentionally been changed in this baseline.
 - Kept fullscreen access on the title screen and in the pause menu.
 - Bumped the Safari cache version so the duplicate disappears immediately.
 
+## V3R6 development — Character Cute Pass
+
+- Redesigned the shared player/NPC character model with larger heads, shorter softer bodies, rounder limbs, chunkier shoes, and a more toy-like silhouette.
+- Enlarged and refined eyes with visible highlights, softened brows, clearer mouths, and warmer cheek blush.
+- Reworked hair into more rounded layered silhouettes for bun, puff, bob, cap, and short styles.
+- Added more dimensional apron, backpack, straps, badges, and clothing details without introducing external model dependencies.
+- Softened idle bounce and walk movement while preserving the repaired social-wave behavior.
+- Kept NPC identities, dialogue, schedules, quest hooks, interaction radii, saves, and gameplay state unchanged.
+- The same character system continues to power the optional third-person player avatar, keeping the art direction consistent.
+
