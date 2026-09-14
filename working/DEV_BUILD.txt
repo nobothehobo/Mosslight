@@ -1,1 +1,1 @@
-Mosslight V3R4 development preview — social animation + music hotfix
+Mosslight V3R5 development preview — fullscreen toggle
