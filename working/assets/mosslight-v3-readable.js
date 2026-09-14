@@ -9583,11 +9583,12 @@ class qc {
     arms = [];
     legs = [];
     mouth = null;
+    brows = [];
     phase = 0;
     facing = 0;
     constructor(t) { this.blinkClock = t.height * 2, this.root.add(this.body), this.root.scale.setScalar(t.height), R(this.body, "box", t.color, 0, 1.3, 0, .79, .82, .44), R(this.body, "box", "#455a63", 0, .86, 0, .69, .25, .42), R(this.body, "box", "#b7d5cc", 0, 1.58, .237, .15, .2, .04, .2), R(this.body, "box", "#e9dbb8", .21, 1.46, .24, .15, .05, .035), this.head.position.set(0, 1.91, 0), this.body.add(this.head), R(this.head, "round", t.skin, 0, .16, 0, .39, .44, .34); for (const e of [-.14, .14])
         R(this.head, "round", "#f5e5cf", e, .2, .304, .085, .09, .036), R(this.head, "round", "#273c3a", e, .2, .337, .044, .063, .019); R(this.head, "round", t.skin, 0, .08, .344, .072, .07, .074), this.mouth = R(this.head, "round", "#965d52", 0, -.04, .325, .09, .018, .025); for (const e of [-1, 1])
-        R(this.head, "round", t.skin, e * .38, .14, 0, .09, .14, .09), R(this.head, "round", "#d0937b", e * .24, .01, .265, .075, .045, .025), R(this.head, "box", t.hair, e * .14, .32, .3, .13, .025, .025); if (R(this.head, "round", t.hair, 0, .45, -.035, .405, .25, .35), R(this.head, "box", t.hair, -.2, .32, .23, .3, .16, .22).rotation.z = -.18, t.style === "bun" && R(this.head, "ball", t.hair, 0, .5, -.36, .24, .27, .23), t.style === "puff")
+        R(this.head, "round", t.skin, e * .38, .14, 0, .09, .14, .09), R(this.head, "round", "#d0937b", e * .24, .01, .265, .075, .045, .025), this.brows.push(R(this.head, "box", t.hair, e * .14, .32, .3, .13, .025, .025)); if (R(this.head, "round", t.hair, 0, .45, -.035, .405, .25, .35), R(this.head, "box", t.hair, -.2, .32, .23, .3, .16, .22).rotation.z = -.18, t.style === "bun" && R(this.head, "ball", t.hair, 0, .5, -.36, .24, .27, .23), t.style === "puff")
         for (const e of [-.24, 0, .24])
             R(this.head, "ball", t.hair, e, .55, -.08, .24, .25, .25); if (t.style === "bob")
         for (const e of [-.32, .32])
@@ -9604,9 +9605,20 @@ class qc {
     } ms(this.body); }
     animate(t, e, n, i, r = 0) { this.blinkClock += t; const a = this.blinkClock % 4.7 > 4.54; this.lids.forEach(c => c.visible = a), this.facing = Bc(this.facing, i, 13, t), this.root.rotation.y = this.facing, this.phase += t * (e > .1 ? e * 2.45 : 1.8); const o = Math.min(.85, e * .105); for (let c = 0; c < 2; c++) {
         const l = Math.sin(this.phase + c * Math.PI);
-        this.legs[c].rotation.x = Mi(this.legs[c].rotation.x, n ? l * o : -.3, 15, t), this.arms[c].rotation.x = Mi(this.arms[c].rotation.x, n ? -l * o : .65, 15, t), this.arms[c].rotation.z = Mi(this.arms[c].rotation.z, 0, 10, t), this.arms[c].rotation.y = Mi(this.arms[c].rotation.y, 0, 10, t);
-    } this.body.position.y = n ? e > .1 ? Math.abs(Math.sin(this.phase)) * .065 : Math.sin(this.phase) * .013 : 0, this.body.rotation.z = Mi(this.body.rotation.z, n ? Math.sin(this.phase) * o * .022 : 0, 5, t), this.head.rotation.y = Mi(this.head.rotation.y, Math.max(-.65, Math.min(.65, r)), 4, t), this.head.rotation.z = Mi(this.head.rotation.z, 0, 7, t), this.mouth && (this.mouth.scale.x = Mi(this.mouth.scale.x, 1, 8, t), this.mouth.scale.y = Mi(this.mouth.scale.y, 1, 8, t)); }
-    socialPose(t, e, n = 1) { const i = de(n, 0, 1), r = this.arms[1]; if (this.mouth && (e === "wave" || e === "grin" || e === "nod")) { this.mouth.scale.x = Mi(this.mouth.scale.x, 1 + .65 * i, 14, t), this.mouth.scale.y = Mi(this.mouth.scale.y, .8, 14, t); } if (e === "wave") { r.rotation.z = Mi(r.rotation.z, -1.42 * i, 13, t), r.rotation.x = Mi(r.rotation.x, -.35 + Math.sin(this.phase * 4.4) * .28, 14, t), r.rotation.y = Mi(r.rotation.y, -.18, 12, t), this.head.rotation.z = Mi(this.head.rotation.z, -.08, 9, t); } else if (e === "nod") { this.head.rotation.x = Mi(this.head.rotation.x, .07 + Math.sin(this.phase * 2.6) * .09 * i, 9, t); } else if (e === "grin") { this.head.rotation.z = Mi(this.head.rotation.z, Math.sin(this.phase * .8) * .045, 8, t); } }
+        this.legs[c].rotation.x = Mi(this.legs[c].rotation.x, n ? l * o : -.3, 15, t), this.arms[c].rotation.x = Mi(this.arms[c].rotation.x, n ? -l * o : .65, 15, t), this.arms[c].rotation.z = Mi(this.arms[c].rotation.z, 0, 9, t), this.arms[c].rotation.y = Mi(this.arms[c].rotation.y, 0, 9, t);
+    } this.body.position.y = n ? e > .1 ? Math.abs(Math.sin(this.phase)) * .065 : Math.sin(this.phase) * .013 : 0, this.body.rotation.z = Mi(this.body.rotation.z, n ? Math.sin(this.phase) * o * .022 : 0, 5, t), this.head.rotation.y = Mi(this.head.rotation.y, Math.max(-.65, Math.min(.65, r)), 4, t), this.head.rotation.z = Mi(this.head.rotation.z, 0, 7, t), this.head.rotation.x = Mi(this.head.rotation.x, 0, 7, t), this.mouth && (this.mouth.scale.x = Mi(this.mouth.scale.x, 1, 10, t), this.mouth.scale.y = Mi(this.mouth.scale.y, 1, 10, t), this.mouth.position.y = Mi(this.mouth.position.y, -.04, 10, t)), this.brows.forEach(c => { c.position.y = Mi(c.position.y, .32, 10, t), c.rotation.z = Mi(c.rotation.z, 0, 10, t); }); }
+    socialPose(t, e, n = 1) {
+        const i = de(n, 0, 1), r = this.arms[1], a = Math.sin(this.phase * 5.2);
+        if (this.mouth) this.mouth.scale.x = Mi(this.mouth.scale.x, 1 + .22 * i, 12, t), this.mouth.scale.y = Mi(this.mouth.scale.y, .78, 12, t), this.mouth.position.y = Mi(this.mouth.position.y, -.025, 12, t);
+        this.brows.forEach((o, c) => { o.position.y = Mi(o.position.y, .35, 12, t), o.rotation.z = Mi(o.rotation.z, (c === 0 ? -.08 : .08) * i, 12, t); });
+        if (e === "wave") {
+            r.rotation.z = Mi(r.rotation.z, 2.38, 10, t), r.rotation.x = Mi(r.rotation.x, -.08 + a * .16, 12, t), r.rotation.y = Mi(r.rotation.y, .05, 10, t), this.head.rotation.z = Mi(this.head.rotation.z, -.055, 8, t);
+        } else if (e === "nod") {
+            this.head.rotation.x = Mi(this.head.rotation.x, .04 + Math.sin(this.phase * 2.5) * .055 * i, 8, t);
+        } else if (e === "grin") {
+            this.head.rotation.z = Mi(this.head.rotation.z, .035, 8, t);
+        }
+    }
 }
 class H0 {
     constructor(t, e) { this.input = t, this.colliders = e; }
@@ -9818,27 +9830,61 @@ class $0 {
         const o = e.createBiquadFilter();
         o.type = "lowpass", o.frequency.value = 800, a.connect(o), o.connect(this.ambience), a.start(), this.apply(this.settings);
     } await this.context.resume(); }
-    apply(t) { this.settings = t, this.context && (this.master.gain.value = t.master, this.music.gain.value = t.music * .105, this.fx.gain.value = t.effects * .4, this.ambience.gain.value = .2); }
+    apply(t) { this.settings = t, this.context && (this.master.gain.value = t.master, this.music.gain.value = t.music * .16, this.fx.gain.value = t.effects * .4, this.ambience.gain.value = .2); }
     tone(t, e = .12, n = "sine", i = .2, r = !1, a = 0) { const o = this.context; if (!o || o.state !== "running")
-        return; const c = o.createOscillator(), l = o.createGain(), h = o.currentTime + Math.max(0, a); c.type = n, c.frequency.setValueAtTime(t, h), l.gain.setValueAtTime(1e-4, h), l.gain.exponentialRampToValueAtTime(Math.max(.001, i), h + .035), l.gain.exponentialRampToValueAtTime(1e-4, h + e), c.connect(l), l.connect(r ? this.music : this.fx), c.start(h), c.stop(h + e + .06), c.onended = () => { c.disconnect(), l.disconnect(); }; }
-    musicPhrase(t, e) { const n = {
-        cafe: [[164.81, 207.65, 246.94, 329.63], [174.61, 220, 261.63, 349.23], [146.83, 196, 246.94, 293.66]],
-        ship: [[146.83, 220, 293.66, 369.99], [130.81, 196, 261.63, 329.63], [164.81, 246.94, 329.63, 415.3]],
-        orren: [[174.61, 261.63, 349.23, 440], [196, 293.66, 392, 493.88], [164.81, 246.94, 329.63, 440]],
-        store: [[196, 246.94, 329.63, 392], [220, 261.63, 329.63, 440], [174.61, 220, 293.66, 349.23]],
-        cave: [[130.81, 196, 261.63], [146.83, 220, 293.66], [123.47, 185, 246.94]],
-        night: [[174.61, 220, 293.66, 349.23], [146.83, 196, 246.94, 329.63], [164.81, 207.65, 261.63, 329.63]],
-        outside: [[196, 246.94, 293.66, 392], [220, 261.63, 329.63, 440], [174.61, 220, 293.66, 349.23], [196, 261.63, 329.63, 493.88]]
-    }, i = t === "outside" && e > 18 ? "night" : t, r = n[i] ?? n.outside, a = r[this.musicStep++ % r.length], o = t === "cave" ? 0.045 : t === "ship" ? .052 : .06, c = t === "cave" ? "sine" : "triangle";
-        this.tone(a[0] / 2, 4.8, "sine", o * .62, !0, 0);
-        a.slice(0, 3).forEach((l, h) => this.tone(l, 1.55 + h * .18, c, o * (1 - h * .12), !0, h * .62));
-        a[3] && this.musicStep % 2 === 0 && this.tone(a[3], 1.75, "sine", o * .45, !0, 2.05);
-        t === "cafe" && this.musicStep % 3 === 0 && this.tone(a[1] * 2, .9, "sine", o * .25, !0, 2.75);
+        return; const c = o.createOscillator(), l = o.createGain(), h = o.currentTime + Math.max(0, a); c.type = n, c.frequency.setValueAtTime(t, h), l.gain.setValueAtTime(1e-4, h), l.gain.exponentialRampToValueAtTime(Math.max(.001, i), h + .025), l.gain.exponentialRampToValueAtTime(1e-4, h + e), c.connect(l), l.connect(r ? this.music : this.fx), c.start(h), c.stop(h + e + .06), c.onended = () => { c.disconnect(), l.disconnect(); }; }
+    musicPhrase(t, e) {
+        const n = {
+            outside: [
+                [392, 329.63, 293.66, 246.94, 329.63],
+                [440, 392, 329.63, 293.66, 392],
+                [329.63, 392, 493.88, 440, 329.63],
+                [293.66, 329.63, 392, 329.63, 246.94]
+            ],
+            night: [
+                [329.63, 293.66, 246.94, 220, 293.66],
+                [392, 329.63, 293.66, 246.94, 220],
+                [293.66, 246.94, 220, 196, 246.94]
+            ],
+            cafe: [
+                [329.63, 392, 440, 392, 329.63, 261.63],
+                [349.23, 440, 523.25, 440, 349.23, 293.66],
+                [392, 329.63, 261.63, 329.63, 440, 392]
+            ],
+            store: [
+                [392, 329.63, 293.66, 329.63, 392],
+                [440, 349.23, 293.66, 349.23, 440],
+                [329.63, 392, 329.63, 261.63, 293.66]
+            ],
+            ship: [
+                [293.66, 369.99, 329.63, 246.94, 293.66],
+                [329.63, 415.3, 369.99, 293.66, 246.94],
+                [246.94, 293.66, 369.99, 329.63, 293.66]
+            ],
+            orren: [
+                [349.23, 440, 523.25, 440, 392],
+                [392, 493.88, 587.33, 493.88, 440],
+                [329.63, 392, 493.88, 440, 349.23]
+            ],
+            cave: [
+                [261.63, 196, 246.94, 220],
+                [293.66, 220, 261.63, 196],
+                [246.94, 185, 220, 164.81]
+            ]
+        };
+        const i = t === "outside" && e > 18 ? "night" : t, r = n[i] ?? n.outside, a = r[this.musicStep++ % r.length], o = i === "cafe" ? [0, .56, 1.22, 2.05, 2.7, 3.45] : i === "cave" ? [0, 1.05, 2.15, 3.35] : [0, .72, 1.5, 2.45, 3.2], c = i === "cave" ? "sine" : i === "ship" ? "sine" : "triangle";
+        a.forEach((l, h) => this.tone(l, h === a.length - 1 ? 1.25 : .48 + (h % 3) * .12, c, i === "cave" ? .075 : .11, !0, o[h] ?? h * .72));
+        if (i !== "cave") {
+            const l = a[0] / 2;
+            this.tone(l, 1.35, "sine", .032, !0, .04), this.tone(l * 1.5, 1.1, "sine", .022, !0, 2.45);
+        }
+        if (i === "cafe" && this.musicStep % 2 === 0)
+            this.tone(a[1] * 2, .55, "sine", .045, !0, 1.78);
     }
     ui() { this.tone(660, .08, "sine", .18); }
     pickup() { this.tone(740, .2, "sine", .22), this.tone(1110, .33, "sine", .09); }
     step() { this.tone(this.zone === "ship" ? 100 : this.zone === "cave" ? 135 : 85, .075, "triangle", .16); }
-    update(t, e, n) { this.zone = e, this.context && (this.nextChord -= t, this.nextChord < 0 && (this.nextChord = (e === "cave" ? 7.8 : 5.4) + Math.random() * 2.8, this.musicPhrase(e, n), e === "outside" && n < 19 && Math.random() < .58 && (this.tone(1050 + Math.random() * 450, .18, "sine", .025, !1, .25), this.tone(1280 + Math.random() * 520, .13, "sine", .018, !1, .42)))); }
+    update(t, e, n) { this.zone = e, this.context && (this.nextChord -= t, this.nextChord < 0 && (this.nextChord = (e === "cave" ? 9.5 : 8) + Math.random() * 3.2, this.musicPhrase(e, n), e === "outside" && n < 19 && Math.random() < .5 && (this.tone(1050 + Math.random() * 450, .16, "sine", .022, !1, .3), this.tone(1280 + Math.random() * 520, .11, "sine", .015, !1, .5)))); }
 }
 function Wl(s, t, e, n) { let i = null, r = -1 / 0; for (const a of s) {
     if (a.zone !== n || a.enabled && !a.enabled())

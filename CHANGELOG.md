@@ -33,3 +33,12 @@ No gameplay behavior has intentionally been changed in this baseline.
 - Improved terrain material response, sky horizon depth, sunset halo, and overall exposure.
 - Kept gameplay, saves, quests, economy, navigation, flight, and interaction coordinates unchanged.
 
+## V3R4 development hotfix — social animation + audible music variation
+
+- Replaced the awkward NPC arm pose with a safer raised whole-arm wave.
+- Removed exaggerated mouth stretching and switched expressions to subtle mouth, brow, nod, and head-tilt motion.
+- Added automatic pose reset so social expressions return cleanly to idle animations.
+- Reworked music again with clearly separated melodic notes, changing motifs, rhythmic spacing, and real rests instead of a nearly continuous sustained tone.
+- Raised the musical layer enough to be audible while preserving the existing filtered ambient noise bed.
+- Added a dev-build cache-buster so Safari reliably loads the new runtime and stylesheet.
+
