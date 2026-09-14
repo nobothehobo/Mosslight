@@ -1,0 +1,40 @@
+name: Apply V3R5.3 fullscreen cleanup
+
+on:
+  push:
+    branches:
+      - development
+    paths:
+      - "tools/apply-v3r53-fullscreen-cleanup.py"
+      - ".github/workflows/apply-v3r53-fullscreen-cleanup.yml"
+
+permissions:
+  contents: write
+
+jobs:
+  apply:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Checkout development
+        uses: actions/checkout@v4
+        with:
+          ref: development
+          fetch-depth: 0
+
+      - name: Apply cleanup
+        run: python tools/apply-v3r53-fullscreen-cleanup.py
+
+      - name: Validate runtime
+        run: |
+          node --check working/assets/mosslight-v3-readable.js
+          ! grep -q 'id="fullscreen-button"' working/assets/mosslight-v3-readable.js
+          grep -q 'id="fullscreen-fab"' working/assets/mosslight-v3-readable.js
+          grep -q 'v=3.53' working/index.html
+
+      - name: Commit cleanup
+        run: |
+          git config user.name "Mosslight Development Bot"
+          git config user.email "actions@users.noreply.github.com"
+          git add CHANGELOG.md source/legacy/mosslight-v3-runtime.js source/legacy/mosslight-v3.css working/assets/mosslight-v3-readable.js working/assets/mosslight-v3.css working/index.html
+          git commit -m "Remove duplicate fullscreen control" || exit 0
+          git push origin development
